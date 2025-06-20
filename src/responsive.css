@@ -1,0 +1,105 @@
+/* Additional responsive styles */
+@media (max-width: 640px) {
+  .card {
+    @apply p-4;
+  }
+  
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Focus styles for better accessibility */
+.focus-visible:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Improved input styles */
+.input-field:focus {
+  @apply ring-2 ring-primary border-transparent;
+}
+
+/* Triangle drawing container styles */
+.triangle-container {
+  @apply bg-gray-50 rounded-xl p-4 flex items-center justify-center;
+  min-height: 300px;
+}
+
+@media (min-width: 768px) {
+  .triangle-container {
+    min-height: 400px;
+  }
+}
+
+/* Responsive card grid */
+.card-grid {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Improved button hover effects */
+.btn-primary:hover, .btn-secondary:hover {
+  @apply transform scale-105 shadow-md;
+  transition: all 0.2s ease;
+}
+
+/* Navbar improvements */
+.nav-link {
+  @apply relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
+  transform: scaleX(0.8);
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary;
+  transform: scaleX(1);
+}
+
+/* Improved card hover effects */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .btn-primary, .btn-secondary {
+    @apply w-full justify-center;
+  }
+  
+  .container {
+    @apply px-4;
+  }
+}
